@@ -47,7 +47,7 @@ if not GOOGLE_SHEET_ID:
 if not all([VAPI_API_KEY, VAPI_ASSISTANT_ID, VAPI_PHONE_NUMBER_ID, TWILIO_PHONE_NUMBER]):
     raise Exception("Missing required VAPI/Twilio environment variables")
 
-credentials_info = json.loads(os.getenv("GOOGLE_SERVICE_ACCOUNT_JSON"))
+credentials_info = json.loads(creds_env)
 creds = Credentials.from_service_account_info(credentials_info, scopes=["https://www.googleapis.com/auth/spreadsheets"])
 gc = gspread.authorize(creds)
 workbook = gc.open_by_key(GOOGLE_SHEET_ID)
