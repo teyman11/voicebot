@@ -31,6 +31,7 @@ VAPI_ASSISTANT_ID = os.getenv("VAPI_ASSISTANT_ID")
 VAPI_PHONE_NUMBER_ID = os.getenv("VAPI_PHONE_NUMBER_ID")
 TWILIO_PHONE_NUMBER = os.getenv("TWILIO_PHONE_NUMBER")
 VAPI_BASE_URL = os.getenv("VAPI_BASE_URL", "https://api.vapi.ai")
+creds_env = os.getenv("GOOGLE_SERVICE_ACCOUNT_JSON")
 
 app = FastAPI()
 app.add_middleware(
